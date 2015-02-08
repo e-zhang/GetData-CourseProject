@@ -1,15 +1,14 @@
-## Variables
+# Variables
 
-# Experiment Data
+## Experiment Data
 
 activity - a description of the activity that subject was doing
 
 subjectID - the ID of the subject that parcitipated in the experiment
 
 
-The following variables/features descriptions were extract from the UCI data set 
-
-# Body Acceleration Accelerometer Data
+### The following variables/features descriptions were extract from the UCI data set 
+## Body Acceleration Accelerometer Data
 
 tBodyAcc-mean()-X, tBodyAcc-mean()-Y, tBodyAcc-mean()-Z: the mean value of the measured accelerometer data in the 3 axial dimensiosn with a frequency greater than 0.3 Hz
 
@@ -27,7 +26,7 @@ tBodyAccJerkMag-mean(): the mean value of the magnitude of the three dimensional
 
 tBodyAccJerkMag-std(): the std value of the magnitude of the three dimensional body jerk signal 
 
-# Gravity Acceleration Accelerometer Data
+## Gravity Acceleration Accelerometer Data
 
 tGravityAcc-mean()-X, tGravityAcc-mean()-Y, tGravityAcc-mean()-Z: the mean value of the measured accelerometer data in the 3 axial dimensiosn with a frequency less than 0.3 Hz
 
@@ -45,7 +44,7 @@ tGravityAccJerkMag-mean(): the mean value of the magnitude of the three dimensio
 
 tGravityAccJerkMag-std(): the std value of the magnitude of the three dimensional gravity jerk signal 
 
-# Body Acceleration Gyroscope Data
+## Body Acceleration Gyroscope Data
 
 tBodyGyro-mean()-X, tBodyGyro-mean()-Y, tBodyGyro-mean()-Z: the mean value of the measured gyroscope data in the 3 axial dimensiosn with a frequency greater than 0.3 Hz
 
@@ -63,7 +62,7 @@ tBodyGyroJerkMag-mean(): the mean value of the magnitude of the three dimensiona
 
 tBodyGyroJerkMag-std(): the std value of the magnitude of the three dimensional body jerk signal 
 
-# Gravity Acceleration Gyroscope Data
+## Gravity Acceleration Gyroscope Data
 
 tGravityGyro-mean()-X, tGravityGyro-mean()-Y, tGravityGyro-mean()-Z: the mean value of the measured gyroscope data in the 3 axial dimensiosn with a frequency less than 0.3 Hz
 
@@ -84,7 +83,7 @@ tGravityGyroJerkMag-std(): the std value of the magnitude of the three dimension
 ---------------
 
 
-# FFT of Body Acceleration Accelerometer Data
+## FFT of Body Acceleration Accelerometer Data
 
 fBodyAcc-mean()-X, fBodyAcc-mean()-Y, fBodyAcc-mean()-Z: the mean value of the FFT of the measured accelerometer data in the 3 axial dimensiosn with a frequency greater than 0.3 Hz
 
@@ -102,7 +101,7 @@ fBodyAccJerkMag-mean(): the mean value of the FFT of the  magnitude of the three
 
 fBodyAccJerkMag-std(): the std value of the FFT of the  magnitude of the three dimensional body jerk signal 
 
-# FFT of Gravity Acceleration Accelerometer Data
+## FFT of Gravity Acceleration Accelerometer Data
 
 fGravityAcc-mean()-X, fGravityAcc-mean()-Y, fGravityAcc-mean()-Z: the mean value of the FFT of the  measured accelerometer data in the 3 axial dimensiosn with a frequency less than 0.3 Hz
 
@@ -120,7 +119,7 @@ fGravityAccJerkMag-mean(): the mean value of the FFT of the  magnitude of the th
 
 fGravityAccJerkMag-std(): the std value of the FFT of the  magnitude of the three dimensional gravity jerk signal 
 
-# FFT of Body Acceleration Gyroscope Data
+## FFT of Body Acceleration Gyroscope Data
 
 fBodyGyro-mean()-X, fBodyGyro-mean()-Y, fBodyGyro-mean()-Z: the mean value of the FFT of the  measured gyroscope data in the 3 axial dimensiosn with a frequency greater than 0.3 Hz
 
@@ -138,7 +137,7 @@ fBodyGyroJerkMag-mean(): the mean value of the FFT of the  magnitude of the thre
 
 fBodyGyroJerkMag-std(): the std value of the FFT of the  magnitude of the three dimensional body jerk signal 
 
-# FFT of Gravity Acceleration Gyroscope Data
+## FFT of Gravity Acceleration Gyroscope Data
 
 fGravityGyro-mean()-X, fGravityGyro-mean()-Y, fGravityGyro-mean()-Z: the mean value of the FFT of the  measured gyroscope data in the 3 axial dimensiosn with a frequency less than 0.3 Hz
 
@@ -155,3 +154,27 @@ fGravityGyroJerk-std()-X, fGravityGyroJerk-std()-Y, fGravityGyroJerk-std()-Z - t
 fGravityGyroJerkMag-mean(): the mean value of the FFT of the  magnitude of the three dimensional gravity jerk signal 
 
 fGravityGyroJerkMag-std(): the std value of the FFT of the  magnitude of the three dimensional gravity jerk signal 
+
+
+
+# Summary Choices
+
+The dataset includes the average of each variable's measurement for a subject during a particular activity on a row. 
+
+There were 6 different activities and 30 different subjects for a total of 180 rows. 
+
+# Transformations
+
+The data is read in via X_train.txt and X_test.txt.
+
+The features are read in via features.txt.
+
+The activity descriptions are read in via activity_labels.txt.
+
+The activity descriptions are transformed by mapping the integer value from Y_train.txt and Y_test.txt to the corresponding description in activity_labels.txt.
+
+The subject ids are read in via subject_train.txt and subject_test.txt.
+
+The separate train and test datasets are merged into one.
+
+The mean and std measurements are selected from the merged dataset and grouped by subject and activity. The mean is then extracted for each subject and activity combination.
